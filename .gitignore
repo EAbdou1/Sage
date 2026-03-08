@@ -1,0 +1,15 @@
+# Python / Backend Agents
+agents/venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment Variables
+.env
+agents/.env
+
+# OS & Editor Files
+.DS_Store
+.vscode/
+.idea/
