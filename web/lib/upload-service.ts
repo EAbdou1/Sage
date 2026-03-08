@@ -54,6 +54,34 @@ export async function uploadPresentationFile(
       }),
     });
 
+    setTimeout(async () => {
+      await updateDoc(docRef, {
+        status: "ready",
+        logs: arrayUnion({
+          timestamp: new Date().toISOString(),
+          agent: "System",
+          message: "Pipeline complete. Launching presentation.",
+          type: "success",
+        }),
+        slides: [
+          {
+            id: 0,
+            title: "Pathophysiology of H. Pylori",
+            content:
+              "Helicobacter pylori survives in the acidic environment of the stomach by secreting urease, which converts urea to ammonia, neutralizing the acid.",
+          },
+          {
+            id: 1,
+            title: "Knowledge Check",
+            content:
+              "Which enzyme is primarily responsible for allowing this bacteria to survive gastric acid?",
+            isMCQ: true,
+            mcqOptions: ["Amylase", "Urease", "Protease", "Lipase"],
+          },
+        ],
+      });
+    }, 5000);
+
     return downloadUrl;
   } catch (error: any) {
     console.error("Firebase Upload Error:", error);

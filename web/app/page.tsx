@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import LoggerPanel, { LogEntry } from "@/components/logger-panel";
+import SlideDeck from "@/components/slide-deck";
 
 export default function Home() {
   const { sessionId } = useSession();
@@ -62,12 +63,19 @@ export default function Home() {
               </div>
             )}
 
-            {presentationData?.status === "ready" && (
-              <div className="text-center p-8 text-green-600 font-bold">
-                Lecture is Ready! (Reveal.js initialization pending)
+            {/* Ready State */}
+            {presentationData?.status === "ready" && presentationData?.slides && (
+              <div className="w-full animate-in fade-in zoom-in duration-500">
+                <SlideDeck slides={presentationData.slides} />
+
+                {/* A mock control panel for your voice agent later */}
+                <div className="flex justify-center gap-4 mt-6">
+                  <Button variant="outline" className="text-emerald-500 border-emerald-500">
+                    🎤 Sage is Listening...
+                  </Button>
+                </div>
               </div>
             )}
-
           </CardContent>
         </Card>
       </main>
