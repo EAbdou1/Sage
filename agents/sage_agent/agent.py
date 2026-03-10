@@ -1,3 +1,8 @@
+# sage_agent/agent.py
+#
+# Defines all Sage agents and wires them into a SequentialAgent pipeline.
+# This is the ADK layer — it orchestrates the tools we built.
+#
 # Pipeline:
 #   SagePipeline (SequentialAgent)
 #     ├── ContentAgent  → PDF → slide text
@@ -336,7 +341,7 @@ After rewriting:
 sage_pipeline = SequentialAgent(
     name="SagePipeline",
     description="Full pipeline: processes a PDF into a complete slide deck with images. Takes a session_id and runs ContentAgent then ImageAgent in order.",
-    agents=[content_agent, image_agent]
+    sub_agents=[content_agent, image_agent]
 )
 
 # Root agent — exposed to ADK (required for adk web / adk run)
