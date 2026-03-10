@@ -66,17 +66,126 @@ export async function uploadPresentationFile(
         slides: [
           {
             id: 0,
-            title: "Pathophysiology of H. Pylori",
+            type: "overview",
+            title: "Introduction to Blood Groups",
             content:
-              "Helicobacter pylori survives in the acidic environment of the stomach by secreting urease, which converts urea to ammonia, neutralizing the acid.",
+              "Blood types are classified based on inherited antigenic substances on the surface of red blood cells. Understanding blood groups is essential for performing life-saving blood transfusions safely.",
           },
           {
             id: 1,
-            title: "Knowledge Check",
+            type: "content",
+            title: "The ABO Blood Group System",
             content:
-              "Which enzyme is primarily responsible for allowing this bacteria to survive gastric acid?",
+              "The ABO system relies on the presence or absence of two glycolipid antigens, A and B, on red blood cells. Depending on these antigens, a person's blood type is classified as A, B, AB, or O.",
+          },
+          {
+            id: 2,
+            type: "content",
+            title: "Agglutinins in Plasma",
+            content:
+              "Blood plasma contains antibodies called agglutinins that attack recognized 'non-self' antigens. They are absent at birth but appear at 3-4 months of age due to cross-reactivity with environmental antigens like bacteria.",
+          },
+          {
+            id: 3,
+            type: "content",
+            title: "The Danger of Agglutination",
+            content:
+              "If a patient receives an incompatible blood type, their antibodies will bind to the donor's red blood cell antigens. This causes agglutination, a deadly clumping of cells that blocks blood vessels.",
+          },
+          {
+            id: 4,
+            type: "mcq",
+            title: "Knowledge Check 1",
+            content:
+              "Why do ABO antibodies (agglutinins) form in an infant's blood?",
             isMCQ: true,
-            mcqOptions: ["Amylase", "Urease", "Protease", "Lipase"],
+            mcqOptions: [
+              "They are inherited directly from the mother's plasma",
+              "They develop after exposure to environmental antigens like bacteria and pollen",
+              "They are naturally present on red blood cells at birth",
+              "They only form after receiving a mismatched blood transfusion",
+            ],
+            correctAnswer: 1,
+            explanation:
+              "ABO antibodies appear around 3-4 months due to immune cross-reactivity with naturally occurring environmental factors.",
+          },
+          {
+            id: 5,
+            type: "content",
+            title: "Universal Donors and Recipients",
+            content:
+              "People with Type O blood are 'universal donors' for packed red cells because they lack A and B antigens. Conversely, Type AB individuals are 'universal recipients' because they lack circulating anti-A and anti-B antibodies.",
+          },
+          {
+            id: 6,
+            type: "content",
+            title: "The Rh Factor",
+            content:
+              "The Rh system is another crucial classification, primarily based on the potent D antigen. Individuals with this antigen are considered Rh-positive, while those lacking it are Rh-negative.",
+          },
+          {
+            id: 7,
+            type: "content",
+            title: "Rh Transfusion Reactions",
+            content:
+              "Unlike the ABO system, there are no naturally occurring anti-Rh antibodies in human blood. An Rh-negative person will only develop these antibodies after a sensitizing exposure to Rh-positive blood.",
+          },
+          {
+            id: 8,
+            type: "mcq",
+            title: "Knowledge Check 2",
+            content:
+              "Which blood type is considered the universal recipient for packed red blood cells?",
+            isMCQ: true,
+            mcqOptions: ["Type O", "Type A", "Type B", "Type AB"],
+            correctAnswer: 3,
+            explanation:
+              "Type AB individuals are universal recipients because they do not have anti-A or anti-B antibodies in their blood plasma to attack donor cells.",
+          },
+          {
+            id: 9,
+            type: "content",
+            title: "Hemolytic Disease of the Newborn",
+            content:
+              "When an Rh-negative mother carries an Rh-positive fetus, fetal blood leakage at delivery can sensitize her immune system. In subsequent pregnancies, her anti-Rh antibodies can cross the placenta and destroy the fetus's red blood cells.",
+          },
+          {
+            id: 10,
+            type: "content",
+            title: "Preventing Hemolytic Disease",
+            content:
+              "This dangerous condition is prevented by giving the mother injections of Rho(D) immune globulin (RhoGAM). These antibodies inactivate the leaked fetal Rh antigens before the mother's immune system can mount a response.",
+          },
+          {
+            id: 11,
+            type: "content",
+            title: "Why ABO Rarely Causes HDN",
+            content:
+              "Unlike Rh incompatibility, ABO incompatibility rarely causes Hemolytic Disease of the Newborn. This is because anti-A and anti-B antibodies are large IgM globulins that cannot physically cross the placenta.",
+          },
+          {
+            id: 12,
+            type: "mcq",
+            title: "Knowledge Check 3",
+            content:
+              "Why does ABO incompatibility between mother and fetus rarely cause Hemolytic Disease of the Newborn?",
+            isMCQ: true,
+            mcqOptions: [
+              "ABO antigens are completely absent from fetal red blood cells",
+              "The fetal immune system rapidly neutralizes maternal ABO antibodies",
+              "Anti-A and anti-B are large IgM antibodies that cannot cross the placenta",
+              "The mother's blood naturally lacks all ABO antibodies during pregnancy",
+            ],
+            correctAnswer: 2,
+            explanation:
+              "Anti-A and anti-B belong to the large IgM class of gamma globulins, which are physically too big to cross the placental barrier.",
+          },
+          {
+            id: 13,
+            type: "summary",
+            title: "Summary",
+            content:
+              "Blood typing relies on identifying ABO and Rh antigens to ensure safe medical transfusions. Strict cross-matching prevents deadly agglutination and helps manage Rh incompatibility during pregnancy.",
           },
         ],
       });

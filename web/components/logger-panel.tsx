@@ -33,7 +33,7 @@ export default function LoggerPanel({ logs = [] }: { logs: LogEntry[] }) {
   };
 
   return (
-    <div className="flex flex-col h-full border-l  font-mono text-xs">
+    <div className="flex flex-col h-full border-l font-mono text-xs">
       <div className="p-3 border-b  flex justify-between items-center">
         <span className="font-semibold text-slate-100 tracking-wider">SYSTEM.LOGS</span>
         <div className="flex items-center gap-2">
